@@ -28,7 +28,7 @@ func translateText(s string) string {
 
 	s = regexReplaceAllStringFunc(pattern, s, func(groups []string) string {
 		word := modifyWord(groups[2], IsUpper(groups[2]+groups[3]))
-		if len(word+groups[3]) <= 5 {
+		if len(word+groups[3]) <= len(*prefix)+1 {
 			return groups[0]
 		}
 		return groups[1] + word + groups[3]
