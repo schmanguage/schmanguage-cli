@@ -45,9 +45,9 @@ func modifyWord(word string, isUppercase bool) string {
 
 	vowel := word[len(word)-1]
 	if isUppercase {
-		return "SCHM" + string(vowel)
+		return strings.ToUpper(*prefix) + string(vowel)
 	}
-	return "Schm" + string(unicode.ToLower(rune(vowel)))
+	return *prefix + string(unicode.ToLower(rune(vowel)))
 }
 
 func regexReplaceAllStringFunc(re *regexp.Regexp, s string, repl func(groups []string) string) string {

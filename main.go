@@ -16,10 +16,12 @@ const (
 
 var (
 	paramType flagType
+	prefix    *string
 )
 
 func init() {
 	flag.StringVar((*string)(&paramType), "type", "text", "The type of the input")
+	prefix = flag.String("prefix", "Schm", "The characters that get replaced with until the fist vowel")
 }
 
 func main() {
